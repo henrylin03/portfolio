@@ -1,13 +1,13 @@
 .header {
   background-color: black;
   color: white;
-}
-
-.logoContainer figure {
-  height: 10rem;
-  width: 10rem;
+  padding: 1rem;
 }
 
 .logoIcon {
-  background-image: url("/assets/branding/transparent logo - logo only.svg");
+  height: 1.75rem;
+}
+
+.logoText {
+  height: 1rem;
 }
