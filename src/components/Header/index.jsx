@@ -32,7 +32,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.inner}>
         {/* branding */}
-        <a href="/">
+        <a href="/" className={styles.branding}>
           <Group>
             <img
               src={logoIcon}

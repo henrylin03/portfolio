@@ -1,14 +1,15 @@
 .header {
   background-color: black;
   color: white;
-  padding: var(--mantine-spacing-md);
+  padding: var(--mantine-spacing-xs);
   margin: 0 auto;
 }
 
 .inner {
   composes: inner from global;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
 }
 
 /* branding */
@@ -30,4 +31,12 @@
 .navLink {
   color: white;
   text-decoration: none;
+  padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+  font-size: var(--mantine-font-size-sm);
+  border-radius: var(--mantine-radius-sm);
+  transition: background-color 0.05s ease-out;
+
+  @mixin hover {
+    background-color: var(--mantine-color-dark-8);
+  }
 }
