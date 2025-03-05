@@ -1,4 +1,4 @@
-import { Group } from "@mantine/core";
+import { Group, Button } from "@mantine/core";
 import logoIcon from "/assets/branding/transparent logo - logo only.svg";
 import logoText from "/assets/branding/transparent logo - text only.svg";
 
@@ -51,6 +51,16 @@ const Header = () => {
         <Nav />
 
         {/* button(s) */}
+        <Button
+          variant="white"
+          color="black"
+          radius="xl"
+          component="a"
+          href="#contact"
+          className={styles.ctaButton}
+        >
+          Let's chat
+        </Button>
       </div>
     </header>
   );

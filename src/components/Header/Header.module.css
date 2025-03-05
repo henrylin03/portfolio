@@ -40,3 +40,12 @@
     background-color: var(--mantine-color-dark-8);
   }
 }
+
+/* right-side */
+.ctaButton {
+  justify-self: end;
+
+  @mixin hover {
+    background-color: var(--mantine-color-gray-1) !important;
+  }
+}
