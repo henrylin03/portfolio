@@ -5,10 +5,29 @@
   margin: 0 auto;
 }
 
+.inner {
+  composes: inner from global;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* branding */
 .logoIcon {
   height: 1.75rem;
 }
 
 .logoText {
   height: 1rem;
+}
+
+/* nav */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
 }
