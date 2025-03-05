@@ -5,7 +5,7 @@ import "./styles/global.css";
 
 const App = () => {
   return (
-    <MantineProvider>
+    <MantineProvider forceColorScheme="dark">
       <Header />
     </MantineProvider>
   );

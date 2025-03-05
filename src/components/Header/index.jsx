@@ -1,39 +1,36 @@
-import { Group, Button } from "@mantine/core";
+import { Group, Button, Burger, Drawer, Stack, Divider } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import logoIcon from "/assets/branding/transparent logo - logo only.svg";
 import logoText from "/assets/branding/transparent logo - text only.svg";
-
 import styles from "./Header.module.css";
 
-const Nav = () => {
-  const LINKS_DATA = [
-    { label: "Services", link: "#services" },
-    { label: "Projects", link: "#projects" },
-    { label: "About", link: "#about" },
-    { label: "Contact", link: "#contact" },
-  ];
+const LINKS_DATA = [
+  { label: "Services", link: "#services" },
+  { label: "Projects", link: "#projects" },
+  { label: "About", link: "#about" },
+  { label: "Contact", link: "#contact" },
+];
 
-  return (
-    <nav className={styles.nav}>
-      {LINKS_DATA.map((l) => (
-        <a
-          href={l.link}
-          className={styles.navLink}
-          aria-label={`Go to ${l.label} section`}
-        >
-          {l.label}
-        </a>
-      ))}
-    </nav>
-  );
-};
+const navLinksArray = LINKS_DATA.map((l) => (
+  <a
+    href={l.link}
+    className={styles.navLink}
+    aria-label={`Go to ${l.label} section`}
+    key={l.label}
+  >
+    {l.label}
+  </a>
+));
 
 const Header = () => {
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    useDisclosure(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        {/* branding */}
-        <a href="/" className={styles.branding}>
-          <Group>
+        <a href="/">
+          <Group wrap="nowrap">
             <img
               src={logoIcon}
               className={styles.logoIcon}
@@ -47,13 +44,48 @@ const Header = () => {
           </Group>
         </a>
 
-        {/* nav */}
-        <Nav />
+        <nav className={styles.nav}>
+          <Group visibleFrom="xs">{navLinksArray}</Group>
+        </nav>
 
-        {/* button(s) */}
         <Button
-          variant="white"
-          color="black"
+          color="white"
+          autoContrast
+          radius="xl"
+          component="a"
+          href="#contact"
+          visibleFrom="xs"
+          className={styles.ctaButton}
+        >
+          Let's chat
+        </Button>
+
+        <Burger
+          color="lightgrey"
+          opened={drawerOpened}
+          onClick={toggleDrawer}
+          size="sm"
+          hiddenFrom="xs"
+          className={styles.burger}
+        />
+      </div>
+
+      {/* drawer */}
+      <Drawer
+        opened={drawerOpened}
+        onClose={closeDrawer}
+        size="sm"
+        padding="md"
+        zIndex={999}
+        hiddenFrom="xs"
+      >
+        <Stack gap="xs">{navLinksArray}</Stack>
+
+        <Divider my="md" />
+
+        <Button
+          color="white"
+          autoContrast
           radius="xl"
           component="a"
           href="#contact"
@@ -61,7 +93,7 @@ const Header = () => {
         >
           Let's chat
         </Button>
-      </div>
+      </Drawer>
     </header>
   );
 };
