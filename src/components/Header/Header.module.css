@@ -1,6 +1,5 @@
 .header {
   background-color: black;
-  padding: var(--mantine-spacing-xs) var(--mantine-spacing-xl);
   margin: 0 auto;
 }
 
@@ -44,19 +43,12 @@
 
 /* right-side */
 .ctaButton {
+  composes: primaryBtn from global;
   justify-self: end;
-
-  @mixin hover {
-    background-color: var(--mantine-color-gray-1) !important;
-  }
 }
 
 /* MEDIA QUERIES */
 @media (max-width: $mantine-breakpoint-sm) {
-  .header {
-    padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);
-  }
-
   .navLink {
     padding: var(--mantine-spacing-xs);
   }

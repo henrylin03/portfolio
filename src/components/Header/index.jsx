@@ -1,7 +1,7 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Group, Button, Burger, Drawer, Stack, Divider } from "@mantine/core";
-import logoIcon from "/assets/branding/transparent logo - logo only.svg";
-import logoText from "/assets/branding/transparent logo - text only.svg";
+import logoIcon from "/assets/branding/logoWhite.svg";
+import logoText from "/assets/branding/textWhite.svg";
 import styles from "./Header.module.css";
 
 const LINKS_DATA = [
@@ -45,7 +45,9 @@ const Header = () => {
         </a>
 
         <nav className={styles.nav}>
-          <Group visibleFrom="xs">{navLinksArray}</Group>
+          <Group visibleFrom="xs" gap="1vmin">
+            {navLinksArray}
+          </Group>
         </nav>
 
         <Button

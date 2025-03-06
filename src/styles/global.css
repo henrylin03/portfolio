@@ -1,4 +1,45 @@
+:root {
+  /* font-sizes */
+  --5xl: 3.815rem;
+  --4xl: 3.052rem;
+  --xl: 1.563rem;
+  --lg: 1.25rem;
+  --sm: 0.8rem;
+}
+
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .inner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: var(--mantine-spacing-md) var(--mantine-spacing-xl);
+}
+
+.primaryBtn {
+  transition: background-color 0.2s ease-out;
+
+  @mixin hover {
+    background-color: var(--mantine-color-gray-4) !important;
+  }
+}
+
+.paragraphText {
+  text-wrap: pretty;
+  color: var(--mantine-color-gray-4);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: $mantine-breakpoint-xs) {
+  .inner {
+    padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+  }
+
+  .paragraphText {
+    font-size: var(--mantine-font-size-sm);
+  }
 }
