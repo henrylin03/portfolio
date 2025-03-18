@@ -4,9 +4,12 @@
   /* font-sizes */
   --5xl: 3.815rem;
   --4xl: 3.052rem;
+  --3xl: 2.441rem;
+  --2xl: 1.953rem;
   --xl: 1.563rem;
   --lg: 1.25rem;
   --sm: 0.8rem;
+  --xs: 0.64rem;
 }
 
 /* reset */
@@ -16,12 +19,35 @@
   box-sizing: border-box;
 }
 
+/* sections/wrappers */
+section {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+
 .inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--mantine-spacing-md) var(--mantine-spacing-xl);
 }
 
+/* typography */
+.sectionHeading {
+  font-size: var(--4xl);
+  color: white;
+}
+
+.paragraphText {
+  text-wrap: pretty;
+  line-height: 1.7rem;
+}
+
+.link {
+  font-weight: 700;
+  color: white;
+}
+
+/* UI elements */
 .primaryBtn {
   transition: background-color 0.2s ease-out;
 
@@ -30,18 +56,13 @@
   }
 }
 
-.paragraphText {
-  text-wrap: pretty;
-  color: var(--mantine-color-gray-4);
-}
-
 /* MEDIA QUERIES */
 @media (max-width: $mantine-breakpoint-xs) {
-  .inner {
-    padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+  section {
+    padding: 2rem 0;
   }
 
-  .paragraphText {
-    font-size: var(--mantine-font-size-sm);
+  .inner {
+    padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
   }
 }

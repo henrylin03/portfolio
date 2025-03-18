@@ -1,8 +1,6 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: 4rem;
-  padding-bottom: 8rem;
 }
 
 .inner {
@@ -123,10 +121,6 @@
 }
 
 @media (max-width: $mantine-breakpoint-xs) {
-  .hero {
-    padding: 2rem 0;
-  }
-
   .inner,
   .bottom {
     gap: 1.5rem;
