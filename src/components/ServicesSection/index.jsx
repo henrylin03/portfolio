@@ -40,10 +40,10 @@ const ServicesSection = () => (
   <section id="#services" className={styles.services}>
     <div className={styles.inner}>
       {/* Text */}
-      <Stack justify="center" gap="md" className={styles.textContainer}>
-        <p className={styles.small}>Services</p>
+      <Stack justify="center" gap="md" className="sectionHeadTextContainer">
+        <p className="sectionHeadingKeyword">Services</p>
         <h1 className="sectionHeading">Here to help</h1>
-        <p className={styles.paragraphText}>
+        <p className="paragraphText">
           Whether you're starting from scratch or have an existing website or
           web app needing a revamp,{" "}
           <a href="#contact" className="link">
@@ -62,7 +62,7 @@ const ServicesSection = () => (
             </figure>
             <div className={styles.top}>
               <h2 className={styles.cardHeading}>{service.title}</h2>
-              <p className={styles.paragraphText}>{service.text}</p>
+              <p className="paragraphText">{service.text}</p>
             </div>
             <ul className={styles.skillsContainer}>
               {service.skills.map((skill) => (

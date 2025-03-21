@@ -1,7 +1,7 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Group, Button, Burger, Drawer, Stack, Divider } from "@mantine/core";
-import logoIcon from "/assets/branding/logoWhite.svg";
-import logoText from "/assets/branding/textWhite.svg";
+import logoIcon from "/branding/logoWhite.svg";
+import logoText from "/branding/textWhite.svg";
 import styles from "./Header.module.css";
 
 const LINKS_DATA = [
@@ -53,7 +53,6 @@ const Header = () => {
         <Button
           color="white"
           autoContrast
-          radius="xl"
           component="a"
           href="#contact"
           visibleFrom="xs"
@@ -88,7 +87,6 @@ const Header = () => {
         <Button
           color="white"
           autoContrast
-          radius="xl"
           component="a"
           href="#contact"
           className={styles.ctaButton}

@@ -25,7 +25,7 @@
 /* TEXT */
 .greeting {
   font-size: var(--xl);
-  color: var(--mantine-color-gray-5);
+  color: var(--mantine-color-gray-3);
   text-wrap: no-wrap;
 }
 

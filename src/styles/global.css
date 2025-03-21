@@ -31,15 +31,36 @@ section {
   padding: var(--mantine-spacing-md) var(--mantine-spacing-xl);
 }
 
+.sectionHeadTextContainer {
+  text-align: center;
+}
+
 /* typography */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
 .sectionHeading {
   font-size: var(--4xl);
+  line-height: calc(var(--4xl) * 1.3);
   color: white;
+  text-align: center;
 }
 
 .paragraphText {
-  text-wrap: pretty;
   line-height: 1.7rem;
+}
+
+.sectionHeadTextContainer > .paragraphText {
+  margin: 0 auto;
+  max-width: 75%;
 }
 
 .link {
@@ -47,16 +68,41 @@ section {
   color: white;
 }
 
+.sectionHeadingKeyword {
+  font-size: var(--sm);
+  color: var(--mantine-color-gray-6);
+  font-weight: 500;
+  margin-bottom: -1rem;
+}
+
 /* UI elements */
 .primaryBtn {
   transition: background-color 0.2s ease-out;
-
   @mixin hover {
     background-color: var(--mantine-color-gray-4) !important;
   }
 }
 
+.secondaryBtn {
+  border-width: 2px;
+  transition: background-color 0.2s ease-out;
+  @mixin hover {
+    background-color: var(--mantine-color-dark-7) !important;
+  }
+}
+
 /* MEDIA QUERIES */
+@media (max-width: $mantine-breakpoint-sm) {
+  .sectionHeading {
+    font-size: var(--3xl);
+    line-height: calc(var(--3xl) * 1.3);
+  }
+
+  .sectionHeadTextContainer > .paragraphText {
+    max-width: 85%;
+  }
+}
+
 @media (max-width: $mantine-breakpoint-xs) {
   section {
     padding: 2rem 0;
@@ -64,5 +110,9 @@ section {
 
   .inner {
     padding: var(--mantine-spacing-md) var(--mantine-spacing-lg);
+  }
+
+  .sectionHeadTextContainer > .paragraphText {
+    max-width: 100%;
   }
 }
