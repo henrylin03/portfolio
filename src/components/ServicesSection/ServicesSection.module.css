@@ -1,5 +1,6 @@
 .services {
-  background-color: var(--mantine-color-dark-9);
+  background: linear-gradient(to bottom, black, var(--mantine-color-dark-9));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .services svg {
