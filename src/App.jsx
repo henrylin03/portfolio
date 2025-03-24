@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import ProjectsSection from "./components/ProjectsSection";
+import ExperienceSection from "./components/ExperienceSection";
 import "@mantine/core/styles.css";
 import theme from "./styles/theme";
 import "./styles/global.css";
@@ -16,6 +17,7 @@ const App = () => {
         <HeroSection />
         <ServicesSection />
         <ProjectsSection />
+        <ExperienceSection />
       </main>
 
       <footer></footer>

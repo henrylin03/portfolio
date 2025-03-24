@@ -1,0 +1,128 @@
+.section {
+  background-color: black;
+}
+
+.inner {
+  composes: inner from global;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 8rem;
+}
+
+.headingSectionKeyword {
+  composes: sectionHeadingKeyword from global;
+}
+
+.heading {
+  composes: sectionHeading from global;
+  text-align: left;
+}
+
+.experiences {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--5xl) var(--3xl);
+}
+
+.experience {
+  border-left: 3px solid var(--mantine-color-gray-7);
+  padding: 0 var(--mantine-spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-xs);
+}
+
+.small {
+  font-size: var(--small);
+  color: var(--mantine-color-gray-7);
+}
+
+.employer {
+  color: var(--mantine-color-gray-1);
+  font-size: var(--3xl);
+  font-weight: 500;
+  margin: -0.5rem 0;
+}
+
+.jobTitle {
+  color: var(--mantine-color-gray-4);
+  font-weight: normal;
+  font-size: var(--lg);
+  text-wrap: nowrap;
+}
+
+.dates {
+  composes: paragraphText from global;
+  color: var(--mantine-color-gray-6);
+}
+
+.paragraphText {
+  composes: paragraphText from global;
+  line-height: 1.4rem;
+  color: var(--mantine-color-gray-5);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: $mantine-breakpoint-lg) {
+  .inner {
+    gap: 6rem;
+  }
+
+  .experiences {
+    gap: var(--5xl) var(--2xl);
+  }
+}
+
+@media (max-width: 1078px) {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .headTextContainer {
+    text-align: center;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: $mantine-breakpoint-sm) {
+  .experiences {
+    grid-template-columns: 1fr;
+    gap: var(--3xl);
+  }
+
+  .experience {
+    gap: 0.25rem;
+  }
+
+  .employer {
+    font-size: var(--2xl);
+    margin: 0;
+  }
+
+  .dates,
+  .small {
+    font-size: var(--sm);
+  }
+}
+
+@media (max-width: $mantine-breakpoint-xs) {
+  .employer {
+    font-size: var(--xl);
+  }
+
+  .jobTitle {
+    font-size: 1rem;
+  }
+
+  .paragraphText {
+    font-size: var(--mantine-font-size-sm);
+    line-height: calc(var(--mantine-font-size-sm) * 1.4) !important;
+  }
+}
