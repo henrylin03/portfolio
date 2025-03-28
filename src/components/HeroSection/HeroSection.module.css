@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   overflow: hidden;
+  padding-bottom: 8rem;
 }
 
 .inner {
@@ -56,19 +57,10 @@
   z-index: -1;
 }
 
-@keyframes pan {
-  0% {
-    background-position: 16% 0%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
-}
-
 .logoPattern {
   height: 100%;
   width: 100%;
-  background-image: url("./background.png");
+  background-image: url("/images/background.png");
   background-size: 65%;
   background-position: center;
   position: absolute;
@@ -76,8 +68,6 @@
   top: 0;
   translate: -50% 0%;
   z-index: -1;
-  /* animation: pan 10s linear infinite; */
-  will-change: background-position;
 }
 
 .gradientOverlay {
@@ -93,6 +83,10 @@
 
 /* MEDIA QUERIES */
 @media (max-width: $mantine-breakpoint-lg) {
+  .hero {
+    padding: 5rem 0;
+  }
+
   .logoPattern {
     background-size: cover;
   }
@@ -121,6 +115,10 @@
 }
 
 @media (max-width: $mantine-breakpoint-xs) {
+  .hero {
+    padding: 4rem 0;
+  }
+
   .inner,
   .bottom {
     gap: 1.5rem;
@@ -130,9 +128,13 @@
     grid-template-columns: 1fr;
   }
 
+  .greeting {
+    margin-bottom: 0.5rem;
+  }
+
   .text {
     order: -1;
     text-align: left;
-    max-width: 80%;
+    max-width: 90%;
   }
 }

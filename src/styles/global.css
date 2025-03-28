@@ -21,8 +21,7 @@
 
 /* sections/wrappers */
 section {
-  padding-top: 4rem;
-  padding-bottom: 8rem;
+  padding: 4rem 0;
 }
 
 .inner {

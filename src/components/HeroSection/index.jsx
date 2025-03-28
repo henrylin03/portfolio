@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className={styles.inner}>
         <div className={styles.top}>
           <p className={styles.greeting}>Hi, I'm Henry.</p>
-          <h1 className={styles.heading}>Front-End Web Developer.</h1>
+          <h1 className={styles.heading}>Web Developer.</h1>
         </div>
         <div className={styles.bottom}>
           <Button
