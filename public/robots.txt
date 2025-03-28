@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://henrylin.io/sitemap.xml
