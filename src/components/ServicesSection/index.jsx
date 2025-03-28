@@ -37,7 +37,7 @@ const SERVICES_DATA = [
 ];
 
 const ServicesSection = () => (
-  <section id="#services" className={styles.services}>
+  <section id="services" className={styles.services}>
     <div className={styles.inner}>
       {/* Text */}
       <Stack justify="center" gap="md" className="sectionHeadTextContainer">

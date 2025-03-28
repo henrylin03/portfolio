@@ -70,7 +70,7 @@ const ProjectsSection = () => {
   ));
 
   return (
-    <section className={styles.section} id="#projects">
+    <section className={styles.section} id="projects">
       <div className={styles.inner}>
         <Stack justify="center" gap="sm" className="sectionHeadTextContainer">
           <p className="sectionHeadingKeyword">Projects</p>
@@ -90,7 +90,7 @@ const ProjectsSection = () => {
           target="_blank"
           className={styles.viewMoreOnGitHubButton}
           size="md"
-          aria-label="Go to Henry Lin's GitHub to view more of Henry's projects and their source codes."
+          aria-label="Go to Henry Lin's GitHub to view more of Henry's projects."
         >
           View more on GitHub
         </Button>

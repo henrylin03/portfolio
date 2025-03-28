@@ -29,7 +29,7 @@
 }
 
 .navLink {
-  color: white;
+  color: var(--mantine-color-gray-4);
   text-decoration: none;
   padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
   font-size: var(--mantine-font-size-sm);

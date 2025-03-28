@@ -18,6 +18,8 @@ const HeroSection = () => {
             size="lg"
             rightSection={<IconArrowRight size={24} />}
             className={styles.ctaBtn}
+            component="a"
+            href="#contact"
           >
             Let's chat
           </Button>
