@@ -5,6 +5,7 @@ import ServicesSection from "./components/ServicesSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 import "@mantine/core/styles.css";
 import theme from "./styles/theme";
 import "./styles/global.css";
@@ -128,7 +129,7 @@ const App = () => {
         <ContactSection />
       </main>
 
-      <footer></footer>
+      <Footer />
     </MantineProvider>
   );
 };
