@@ -57,6 +57,7 @@ li {
 
 .paragraphText {
   line-height: 1.7rem;
+  color: var(--mantine-color-gray-5);
 }
 
 .sectionHeadTextContainer > .paragraphText {
@@ -67,6 +68,13 @@ li {
 .link {
   font-weight: 700;
   color: white;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: transparent;
+  transition: all 0.1s ease-out;
+
+  @mixin hover {
+    text-decoration-color: inherit;
+  }
 }
 
 .sectionHeadingKeyword {
@@ -115,5 +123,10 @@ li {
 
   .sectionHeadTextContainer > .paragraphText {
     max-width: 100%;
+  }
+
+  .paragraphText {
+    font-size: var(--mantine-font-size-sm);
+    line-height: calc(var(--mantine-font-size-sm) * 1.5);
   }
 }

@@ -11,7 +11,9 @@ const ProjectsSection = () => {
     <article key={project.id} className={styles.card}>
       <div className={styles.left}>
         <p className={styles.small}>{project.type}</p>
-        <h3 className={styles.projectName}>{project.title}</h3>
+        <a href={project.buttons[0][1]} target="_blank" className="link">
+          <h3 className={styles.projectName}>{project.title}</h3>
+        </a>
         <p className={styles.paragraphText}>{project.copy}</p>
         <List
           className={styles.calloutList}

@@ -54,7 +54,7 @@
 
 .dates {
   composes: paragraphText from global;
-  color: var(--mantine-color-gray-6);
+  color: var(--mantine-color-dark-2) !important;
 }
 
 .paragraphText {
