@@ -1,13 +1,19 @@
 import { MantineProvider } from "@mantine/core";
+import theme from "./styles/theme";
+
+// components
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ExperienceSection from "./components/ExperienceSection";
+import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+
+// css
 import "@mantine/core/styles.css";
-import theme from "./styles/theme";
+import "@mantine/carousel/styles.css";
 import "./styles/global.css";
 
 const Head = () => {
@@ -126,6 +132,7 @@ const App = () => {
         <ServicesSection />
         <ProjectsSection />
         <ExperienceSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
 

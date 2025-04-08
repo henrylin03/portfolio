@@ -41,6 +41,7 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
+  font-weight: 500;
 }
 
 p,
@@ -100,7 +101,19 @@ li {
   }
 }
 
+.transparentCard {
+  padding: 3rem;
+  border: 0.25rem solid var(--mantine-color-dark-4);
+  border-radius: var(--mantine-radius-xl);
+}
+
 /* MEDIA QUERIES */
+@media (max-width: $mantine-breakpoint-md) {
+  .transparentCard {
+    padding: var(--mantine-spacing-xl);
+  }
+}
+
 @media (max-width: $mantine-breakpoint-sm) {
   .sectionHeading {
     font-size: var(--3xl);
@@ -128,5 +141,9 @@ li {
   .paragraphText {
     font-size: var(--mantine-font-size-sm);
     line-height: calc(var(--mantine-font-size-sm) * 1.5);
+  }
+
+  .transparentCard {
+    padding: var(--mantine-spacing-md);
   }
 }
