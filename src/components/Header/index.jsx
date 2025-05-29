@@ -11,20 +11,21 @@ const LINKS_DATA = [
   { label: "Contact", link: "#contact" },
 ];
 
-const navLinksArray = LINKS_DATA.map((l) => (
-  <a
-    href={l.link}
-    className={styles.navLink}
-    aria-label={`Go to ${l.label} section`}
-    key={l.label}
-  >
-    {l.label}
-  </a>
-));
-
 const Header = () => {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
+
+  const navLinksArray = LINKS_DATA.map((l) => (
+    <a
+      href={l.link}
+      className={styles.navLink}
+      aria-label={`Go to ${l.label} section`}
+      key={l.label}
+      onClick={closeDrawer}
+    >
+      {l.label}
+    </a>
+  ));
 
   return (
     <header className={styles.header}>
@@ -62,7 +63,7 @@ const Header = () => {
         </Button>
 
         <Burger
-          color="lightgrey"
+          color="gray.6"
           opened={drawerOpened}
           onClick={toggleDrawer}
           size="sm"
