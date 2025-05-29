@@ -1,5 +1,14 @@
 const experiences = [
   {
+    employer: "LEAP",
+    title: "Frontend Web Developer",
+    startDate: "May 2025",
+    endDate: "Present",
+    description:
+      "I build and maintain web apps used by lawyers in their legal practice management software.",
+  },
+
+  {
     employer: "Henry Lin",
     title: "Freelance Web Developer",
     startDate: "Jul 2023",
