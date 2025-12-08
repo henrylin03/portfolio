@@ -6,7 +6,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -15,5 +19,10 @@
     "astro": "^5.16.4",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "3.7.4"
   }
 }
