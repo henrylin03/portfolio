@@ -1,56 +1,28 @@
 {
-  "name": "portfolio",
-  "private": true,
-  "version": "0.0.0",
+  "name": "henry-lin-portfolio",
   "type": "module",
+  "version": "1.1.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prepare": "husky"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@mantine/carousel": "^7.17.3",
-    "@mantine/core": "^7.17.1",
-    "@mantine/hooks": "^7.17.1",
-    "@tabler/icons-react": "^3.31.0",
-    "embla-carousel-autoplay": "^7.1.0",
-    "embla-carousel-react": "^7.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@astrojs/react": "^4.4.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.4",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
     "husky": "^9.1.7",
-    "jsdom": "^26.0.0",
-    "lint-staged": "^15.4.3",
-    "postcss": "^8.5.3",
-    "postcss-preset-mantine": "^1.17.0",
-    "postcss-simple-vars": "^7.0.1",
-    "prettier": "3.5.3",
-    "vite": "^6.2.0",
-    "vitest": "^3.1.1"
-  },
-  "overrides": {
-    "embla-carousel-react": {
-      "react": "^19.0.0"
-    }
+    "lint-staged": "^16.2.7",
+    "prettier": "3.7.4"
   }
 }
