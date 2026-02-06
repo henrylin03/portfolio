@@ -1,8 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import logo from "@/assets/henrylin-logo.svg";
+import DropdownMenu from "./DropdownMenu.astro";
+import NavbarMenu from "./NavbarMenu.astro";
 
-const NAV_LINKS = [
+export type NavLink = {
+	label: string;
+	href: string;
+};
+
+const NAV_LINKS: NavLink[] = [
 	{ label: "Experience", href: "#experience" },
 	{ label: "Projects", href: "#projects" },
 	{ label: "Get in touch", href: "#contact" },
@@ -16,7 +23,7 @@ const NAV_LINKS = [
       <h1 class="md:text-xl ml-2">henry lin</h1>
     </a>
   </div>
-  <nav class="navbar-end flex-none">
+  <div class="navbar-end flex-none">
     <div class="dropdown dropdown-end">
       <button
         class="btn btn-ghost bg-transparent border-0 md:hidden"
@@ -37,36 +44,8 @@ const NAV_LINKS = [
             d="M4 8l16 0"></path><path d="M4 16l16 0"></path></svg
         ></button
       >
-      <ul
-        class="menu dropdown-content bg-base-100 rounded-box z-1 mt-1 w-40 p-2 shadow-md"
-      >
-        {
-          NAV_LINKS.map((link) => (
-            <li class="prose grid justify-items-end">
-              <a
-                href={link.href}
-                class="no-underline hover:underline underline-offset-4 bg-transparent "
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <DropdownMenu navLinks={NAV_LINKS} />
     </div>
-    <ul class="menu menu-horizontal hidden md:flex">
-      {
-        NAV_LINKS.map((link) => (
-          <li class="prose">
-            <a
-              href={link.href}
-              class="no-underline hover:underline underline-offset-4 bg-transparent"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <NavbarMenu navLinks={NAV_LINKS} class="hidden md:flex" />
+  </div>
 </header>
