@@ -9,15 +9,15 @@ const NAV_LINKS = [
 ];
 ---
 
-<header>
-  <div>
-    <a href="/" class="flex items-center gap-2">
-      <Image src={logo} alt="Logo for Henry Lin" width="36" />
-      <h1>Henry Lin</h1>
+<header class="navbar px-6 py-0">
+  <div class="flex-1">
+    <a href="/" class="py-6 flex items-center">
+      <Image src={logo} alt="Logo for Henry Lin" width="28" />
+      <h1 class="text-xl ml-2 font-semibold">henry lin</h1>
     </a>
   </div>
-  <nav>
-    <ul>
+  <nav class="flex-none">
+    <ul class="menu menu-horizontal">
       {
         NAV_LINKS.map((link) => (
           <li>
