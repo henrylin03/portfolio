@@ -1,3 +1,22 @@
 ---
-
+const NAV_LINKS = [
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Get in touch", href: "#contact" },
+];
 ---
+
+<header>
+  <div></div>
+  <nav>
+    <ul>
+      {
+        NAV_LINKS.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
