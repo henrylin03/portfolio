@@ -31,6 +31,14 @@
 			}
 		}
 	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		},
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
 	"overrides": [
 		{
 			"includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],

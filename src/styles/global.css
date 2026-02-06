@@ -2,9 +2,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: lofi --default;
+	themes: lofi --default;
 }
 
 * {
-  font-family: "Outfit", sans-serif;
+	font-family: "Outfit", sans-serif;
 }
