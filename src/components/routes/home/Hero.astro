@@ -33,7 +33,10 @@ const SOCIALS = [
       <p>Hi, I'm Henry.</p>
       <p>I help companies build memorable experiences on the web.</p>
     </div>
-    <a role="button" href="#contact" class="btn rounded-4xl btn-xl btn-primary"
+    <a
+      role="button"
+      href="#contact"
+      class="btn rounded-4xl transition-transform btn-xl btn-primary hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
       >Get in touch</a
     >
     <ul class="flex items-center gap-4">
@@ -50,7 +53,7 @@ const SOCIALS = [
                 src={link.icon}
                 alt={link.label}
                 loading="eager"
-                class="h-6 w-6 rounded-4xl opacity-80"
+                class="h-6 w-6 rounded-4xl opacity-85 transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none"
               />
             </a>
           </li>
