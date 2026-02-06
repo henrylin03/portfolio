@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import keyboardImg from "@/assets/images/keyboard.png";
+
 // import GithubIcon from "@/assets/icons/github.svg";
 // import LinkedInIcon from "@/assets/icons/linkedin.svg";
 
@@ -9,10 +12,9 @@ const SOCIALS = [
 ---
 
 <section>
-  <div>
+  <div class="prose">
     <h2>Web Engineer</h2>
     <p>Hi, I'm Henry.</p>
-    <br />
     <p>I help companies build memorable experiences on the web.</p>
     <a role="button" href="#contact">Get in touch</a>
     <ul class="flex items-center gap-4">
@@ -27,4 +29,5 @@ const SOCIALS = [
       }
     </ul>
   </div>
+  <Image src={keyboardImg} alt="Computer keyboard" />
 </section>
