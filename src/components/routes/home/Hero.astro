@@ -1,20 +1,28 @@
 ---
 import { Image } from "astro:assets";
 import keyboardImg from "@/assets/images/keyboard.png";
-
-// import GithubIcon from "@/assets/icons/github.svg";
-// import LinkedInIcon from "@/assets/icons/linkedin.svg";
+import githubIcon from "@/assets/icons/github.svg";
+import linkedinIcon from "@/assets/icons/linkedin.svg";
 
 const SOCIALS = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/henrylin03" },
-  { label: "GitHub", href: "https://github.com/henrylin03/" },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/henrylin03",
+    icon: linkedinIcon,
+  },
+  { label: "GitHub", href: "https://github.com/henrylin03/", icon: githubIcon },
 ];
 ---
 
 <section
   class="mx-auto grid max-w-480 grid-cols-[4fr_1fr] items-end gap-6 px-10 py-6"
 >
-  <Image src={keyboardImg} alt="Computer keyboard" class="scale-x-[-1]" />
+  <Image
+    src={keyboardImg}
+    alt="Computer keyboard"
+    class="scale-x-[-1]"
+    loading="eager"
+  />
   <div class="flex max-w-5xl flex-col items-end gap-8">
     <h2
       class="mb-8 text-right text-[15rem] leading-[0.85] font-extralight opacity-85"
@@ -32,8 +40,18 @@ const SOCIALS = [
       {
         SOCIALS.map((link) => (
           <li>
-            <a href={link.href} target="_blank" rel="noopener noreferrer">
-              {link.label}
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Let's connect on ${link.label}`}
+            >
+              <Image
+                src={link.icon}
+                alt={link.label}
+                loading="eager"
+                class="h-6 w-6 rounded-4xl opacity-80"
+              />
             </a>
           </li>
         ))
