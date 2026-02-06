@@ -10,14 +10,51 @@ const NAV_LINKS = [
 ---
 
 <header class="navbar px-6 py-0">
-  <div class="flex-1">
+  <div class="flex-1 navbar-start">
     <a href="/" class="py-6 flex items-center">
       <Image src={logo} alt="Logo for Henry Lin" width="28" loading="eager" />
-      <h1 class="text-xl ml-2">henry lin</h1>
+      <h1 class="md:text-xl ml-2">henry lin</h1>
     </a>
   </div>
-  <nav class="flex-none">
-    <ul class="menu menu-horizontal">
+  <nav class="navbar-end flex-none">
+    <div class="dropdown dropdown-end">
+      <button
+        class="btn btn-ghost bg-transparent border-0 md:hidden"
+        tabindex="-1"
+        aria-label="View navigation menu"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-menu"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M4 8l16 0"></path><path d="M4 16l16 0"></path></svg
+        ></button
+      >
+      <ul
+        class="menu dropdown-content bg-base-100 rounded-box z-1 mt-1 w-40 p-2 shadow-md"
+      >
+        {
+          NAV_LINKS.map((link) => (
+            <li class="prose grid justify-items-end">
+              <a
+                href={link.href}
+                class="no-underline hover:underline underline-offset-4 bg-transparent "
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <ul class="menu menu-horizontal hidden md:flex">
       {
         NAV_LINKS.map((link) => (
           <li class="prose">
