@@ -1,0 +1,30 @@
+---
+// import GithubIcon from "@/assets/icons/github.svg";
+// import LinkedInIcon from "@/assets/icons/linkedin.svg";
+
+const SOCIALS = [
+  { label: "LinkedIn", href: "https://linkedin.com/in/henrylin03" },
+  { label: "GitHub", href: "https://github.com/henrylin03/" },
+];
+---
+
+<section>
+  <div>
+    <h2>Web Engineer</h2>
+    <p>Hi, I'm Henry.</p>
+    <br />
+    <p>I help companies build memorable experiences on the web.</p>
+    <a role="button" href="#contact">Get in touch</a>
+    <ul class="flex items-center gap-4">
+      {
+        SOCIALS.map((link) => (
+          <li>
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
