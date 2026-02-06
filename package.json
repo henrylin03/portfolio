@@ -1,6 +1,5 @@
 {
   "name": "portfolio",
-  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
