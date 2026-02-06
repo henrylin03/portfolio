@@ -28,7 +28,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2"
   },
   "lint-staged": {
-    "*.{ts,astro,js}": "eslint --cache --fix",
-    "*.{ts,astro,css,md,js}": "prettier --write"
+    "**/*.{ts,astro,js}": "eslint --cache --fix",
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
