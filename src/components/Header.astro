@@ -3,16 +3,16 @@ import logo from "@/assets/henrylin-logo.svg";
 import { Image } from "astro:assets";
 
 const NAV_LINKS = [
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Get in touch", href: "#contact" },
+	{ label: "Experience", href: "#experience" },
+	{ label: "Projects", href: "#projects" },
+	{ label: "Get in touch", href: "#contact" },
 ];
 ---
 
 <header class="navbar px-6 py-0">
   <div class="flex-1">
     <a href="/" class="py-6 flex items-center">
-      <Image src={logo} alt="Logo for Henry Lin" width="28" />
+      <Image src={logo} alt="Logo for Henry Lin" width="28" loading="eager" />
       <h1 class="text-xl ml-2 font-semibold">henry lin</h1>
     </a>
   </div>
@@ -20,8 +20,13 @@ const NAV_LINKS = [
     <ul class="menu menu-horizontal">
       {
         NAV_LINKS.map((link) => (
-          <li>
-            <a href={link.href}>{link.label}</a>
+          <li class="prose">
+            <a
+              href={link.href}
+              class="no-underline hover:underline underline-offset-2 bg-transparent"
+            >
+              {link.label}
+            </a>
           </li>
         ))
       }
