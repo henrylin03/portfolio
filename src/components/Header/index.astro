@@ -5,28 +5,28 @@ import DropdownMenu from "./DropdownMenu.astro";
 import NavbarMenu from "./NavbarMenu.astro";
 
 export type NavLink = {
-	label: string;
-	href: string;
+  label: string;
+  href: string;
 };
 
 const NAV_LINKS: NavLink[] = [
-	{ label: "Experience", href: "#experience" },
-	{ label: "Projects", href: "#projects" },
-	{ label: "Get in touch", href: "#contact" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Get in touch", href: "#contact" },
 ];
 ---
 
 <header class="navbar px-6 py-0">
-  <div class="flex-1 navbar-start">
-    <a href="/" class="py-6 flex items-center">
+  <div class="navbar-start flex-1">
+    <a href="/" class="flex items-center py-6">
       <Image src={logo} alt="Logo for Henry Lin" width="28" loading="eager" />
-      <h1 class="md:text-xl ml-2">henry lin</h1>
+      <h1 class="ml-2 md:text-xl">henry lin</h1>
     </a>
   </div>
   <div class="navbar-end flex-none">
     <div class="dropdown dropdown-end">
       <button
-        class="btn btn-ghost bg-transparent border-0 md:hidden"
+        class="btn border-0 bg-transparent btn-ghost md:hidden"
         tabindex="-1"
         aria-label="View navigation menu"
         ><svg
