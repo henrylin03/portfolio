@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/henrylin-logo.svg";
+import DropdownMenu from "./DropdownMenu.astro";
+import NavbarMenu from "./NavbarMenu.astro";
+
+export type NavLink = {
+	label: string;
+	href: string;
+};
+
+const NAV_LINKS: NavLink[] = [
+	{ label: "Experience", href: "#experience" },
+	{ label: "Projects", href: "#projects" },
+	{ label: "Get in touch", href: "#contact" },
+];
+---
+
+<header class="navbar px-6 py-0">
+  <div class="flex-1 navbar-start">
+    <a href="/" class="py-6 flex items-center">
+      <Image src={logo} alt="Logo for Henry Lin" width="28" loading="eager" />
+      <h1 class="md:text-xl ml-2">henry lin</h1>
+    </a>
+  </div>
+  <div class="navbar-end flex-none">
+    <div class="dropdown dropdown-end">
+      <button
+        class="btn btn-ghost bg-transparent border-0 md:hidden"
+        tabindex="-1"
+        aria-label="View navigation menu"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-menu"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M4 8l16 0"></path><path d="M4 16l16 0"></path></svg
+        ></button
+      >
+      <DropdownMenu navLinks={NAV_LINKS} />
+    </div>
+    <NavbarMenu navLinks={NAV_LINKS} class="hidden md:flex" />
+  </div>
+</header>
