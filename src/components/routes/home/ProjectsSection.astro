@@ -9,8 +9,12 @@ interface Props {
 const { projects }: Props = Astro.props;
 ---
 
-<section class="px-10 pb-24 lg:pb-100 xl:px-20 2xl:px-48" id="projects">
-  <h2 class="mr-24 mb-8 text-right text-8xl font-light 2xl:mb-0">Projects</h2>
+<section class="px-10 pt-24 lg:pt-0 lg:pb-100 xl:px-20 2xl:px-48" id="projects">
+  <h2
+    class="mb-8 text-right text-4xl sm:text-5xl sm:font-light md:text-8xl lg:mr-24 2xl:mb-0"
+  >
+    Projects
+  </h2>
   <ul class="flex flex-col gap-24 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
     {
       projects.map((p, idx: number) => (
@@ -31,11 +35,13 @@ const { projects }: Props = Astro.props;
               </video>
             </div>
           </div>
-          <h3 class="mt-4 mb-2 text-5xl font-light">{p.title}</h3>
+          <h3 class="mt-4 text-3xl md:text-4xl lg:mb-2 lg:text-5xl lg:font-light">
+            {p.title}
+          </h3>
           <div class="grid grid-cols-2 gap-2">
             <a
               role="button"
-              class="btn rounded-4xl btn-lg btn-primary"
+              class="btn rounded-4xl btn-primary lg:btn-lg"
               href={p.buttonForLiveSite.href}
               target="_blank"
             >
@@ -44,7 +50,7 @@ const { projects }: Props = Astro.props;
             {p.buttonForCodebase && (
               <a
                 role="button"
-                class="btn rounded-4xl btn-outline btn-lg btn-primary"
+                class="btn rounded-4xl btn-outline btn-primary lg:btn-lg"
                 href={p.buttonForCodebase.href}
                 target="_blank"
               >
