@@ -5,9 +5,39 @@ interface Props {
   projects: ProjectPreview[];
 }
 
-// const { projects } = Astro.props;
+const { projects } = Astro.props;
 ---
 
 <section class="max-w-600 px-48" id="projects">
   <h2 class="text-right text-8xl font-light lg:my-12">Projects</h2>
+  <ul>
+    {
+      projects.map((p) => (
+        <li class="flex flex-col items-start gap-2">
+          <figure />
+          <h3 class="text-6xl font-light">{p.title}</h3>
+          <div class="grid grid-cols-2 gap-2">
+            <a
+              role="button"
+              class="btn rounded-4xl btn-lg btn-primary"
+              href={p.buttonForLiveSite.href}
+              target="_blank"
+            >
+              {p.buttonForLiveSite.copy}
+            </a>
+            {p.buttonForCodebase && (
+              <a
+                role="button"
+                class="btn rounded-4xl btn-outline btn-lg btn-primary"
+                href={p.buttonForCodebase.href}
+                target="_blank"
+              >
+                {p.buttonForCodebase.copy}
+              </a>
+            )}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </section>
