@@ -9,10 +9,14 @@ interface Props {
 const { workplaces } = Astro.props;
 ---
 
-<section class="max-w-6xl px-10 py-50 min-[1022px]:px-10 xl:px-20">
-  <h2 class="my-12 text-8xl font-light">Experience</h2>
+<section class="max-w-7xl px-10 py-16 min-[1022px]:px-10 md:py-50 xl:px-20">
+  <h2
+    class="mb-8 text-4xl sm:mb-12 sm:text-5xl sm:font-light md:text-8xl lg:my-12"
+  >
+    Experience
+  </h2>
   <ul
-    class="grid grid-rows-3 gap-10 divide-gray-200 pl-3 lg:grid-cols-3 lg:divide-x-2 lg:pl-0"
+    class="grid grid-rows-3 gap-8 divide-gray-200 pl-3 sm:pl-0 md:gap-16 lg:grid-cols-3 lg:divide-x-2"
   >
     {
       workplaces.map((w) => (
