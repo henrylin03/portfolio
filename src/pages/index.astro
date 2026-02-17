@@ -2,44 +2,8 @@
 import ExperienceSection from "@/components/routes/home/ExperienceSection.astro";
 import Hero from "@/components/routes/home/Hero.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import githubIcon from "@/assets/icons/github.svg";
-import linkedinIcon from "@/assets/icons/linkedin.svg";
-
-const SOCIALS = [
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/henrylin03",
-    icon: linkedinIcon,
-    classes: "opacity-70",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/henrylin03/",
-    icon: githubIcon,
-    classes: "opacity-80",
-  },
-];
-
-const WORKPLACES = [
-  {
-    employer: "LEAP Legal Software",
-    position: "Software Engineer",
-    startDate: new Date(2025, 6), // May
-    endDate: new Date(2025, 13), // Dec
-  },
-  {
-    employer: "Commonwealth Bank",
-    position: "Automation Engineer",
-    startDate: new Date(2021, 9), // Aug
-    endDate: new Date(2024, 8), // July
-  },
-  {
-    employer: "Telstra",
-    position: "Web Developer",
-    startDate: new Date(2020, 9), // Aug
-    endDate: new Date(2021, 9), // Aug
-  },
-];
+import { SOCIALS } from "@/data/socials";
+import { WORKPLACES } from "@/data/workplaces";
 ---
 
 <BaseLayout title="Henry's Portfolio">
