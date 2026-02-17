@@ -1,5 +1,6 @@
 ---
 import type { ProjectPreview } from "@/data/projects";
+import { Image } from "astro:assets";
 
 interface Props {
   projects: ProjectPreview[];
@@ -9,13 +10,23 @@ const { projects } = Astro.props;
 ---
 
 <section class="max-w-600 px-48" id="projects">
-  <h2 class="text-right text-8xl font-light lg:my-12">Projects</h2>
-  <ul>
+  <h2 class="mb-8 text-right text-8xl font-light">Projects</h2>
+  <ul class="grid grid-cols-2">
     {
       projects.map((p) => (
-        <li class="flex flex-col items-start gap-2">
-          <figure />
-          <h3 class="text-6xl font-light">{p.title}</h3>
+        <li class="flex flex-col items-start gap-4">
+          <div class="mockup-browser w-full border border-base-300">
+            <div class="mockup-browser-toolbar">
+              <div class="input">{p.buttonForLiveSite.href}</div>
+            </div>
+            <div class="preview-container grid place-content-center border-t border-base-300">
+              <Image src={p.preview.img} alt="Preview" />
+              <video autoplay muted loop playsinline class="hidden">
+                <source src={p.preview.video} type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <h3 class="text-5xl font-light">{p.title}</h3>
           <div class="grid grid-cols-2 gap-2">
             <a
               role="button"
@@ -41,3 +52,26 @@ const { projects } = Astro.props;
     }
   </ul>
 </section>
+
+<script>
+  const previewContainers = document.querySelectorAll(".preview-container");
+
+  previewContainers.forEach((container) => {
+    const previewImg = container.querySelector("img");
+    const video = container.querySelector("video");
+
+    container.addEventListener("mouseover", () => {
+      previewImg?.classList.add("hidden");
+      if (!video) return;
+      video.classList.remove("hidden");
+      video.currentTime = 0;
+      video.play();
+    });
+
+    container.addEventListener("mouseleave", () => {
+      previewImg?.classList.remove("hidden");
+      video?.classList.add("hidden");
+      video?.pause();
+    });
+  });
+</script>
