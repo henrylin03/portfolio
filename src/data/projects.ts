@@ -1,7 +1,7 @@
 import eqaImg from "@/assets/images/projects/equinox-screenshot-bw.png";
 import pokememsImg from "@/assets/images/projects/pokemems-screenshot-bw.png";
 import eqaVideo from "@/assets/videos/eqa-preview.mp4";
-import { default as pokememsVideo } from "@/assets/videos/pokemems-preview.mp4";
+import pokememsVideo from "@/assets/videos/pokemems-preview.mp4";
 
 type Button = {
   copy: string;
