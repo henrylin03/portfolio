@@ -9,9 +9,12 @@ interface Props {
 const { projects }: Props = Astro.props;
 ---
 
-<section class="px-10 pt-24 lg:pt-0 lg:pb-100 xl:px-20 2xl:px-48" id="projects">
+<section
+  class="px-10 pt-24 md:pt-48 lg:pb-100 xl:px-20 2xl:px-48"
+  id="projects"
+>
   <h2
-    class="mb-8 text-right text-4xl sm:text-5xl sm:font-light md:text-8xl lg:mr-24 2xl:mb-0"
+    class="decorative-font mb-8 text-right text-4xl font-light sm:text-5xl md:text-8xl xl:mr-24 xl:mb-0"
   >
     Projects
   </h2>
@@ -35,7 +38,7 @@ const { projects }: Props = Astro.props;
               </video>
             </div>
           </div>
-          <h3 class="mt-4 text-3xl md:text-4xl lg:mb-2 lg:text-5xl lg:font-light">
+          <h3 class="decorative-font mt-4 text-3xl font-light md:text-4xl lg:mb-2 lg:text-5xl">
             {p.title}
           </h3>
           <div class="grid grid-cols-2 gap-2">
