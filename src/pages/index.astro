@@ -1,8 +1,12 @@
 ---
+import ExperienceSection from "@/components/routes/home/ExperienceSection.astro";
 import Hero from "@/components/routes/home/Hero.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { SOCIALS } from "@/data/socials";
+import { WORKPLACES } from "@/data/workplaces";
 ---
 
 <BaseLayout title="Henry's Portfolio">
-  <Hero />
+  <Hero socialsLinks={SOCIALS} />
+  <ExperienceSection workplaces={WORKPLACES} />
 </BaseLayout>

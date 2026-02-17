@@ -1,0 +1,55 @@
+---
+import type { Workplace } from "@/data/workplaces";
+import { Image } from "astro:assets";
+
+interface Props {
+  workplaces: Workplace[];
+}
+
+const { workplaces } = Astro.props;
+---
+
+<section
+  class="max-w-7xl px-10 py-16 min-[1022px]:px-10 md:py-50 xl:px-20"
+  id="experience"
+>
+  <h2
+    class="mb-8 text-4xl sm:mb-12 sm:text-5xl sm:font-light md:text-8xl lg:my-12"
+  >
+    Experience
+  </h2>
+  <ul
+    class="grid grid-rows-3 gap-8 divide-gray-200 pl-3 sm:pl-0 md:gap-16 lg:grid-cols-3 lg:divide-x-2"
+  >
+    {
+      workplaces.map((w) => (
+        <li class="flex gap-7 lg:gap-4">
+          <figure class="sketched grid h-20 w-20 place-items-center rounded-2xl border-2 border-gray-500">
+            <Image
+              src={w.img}
+              alt={w.employer}
+              loading="lazy"
+              class="h-14 w-14"
+            />
+          </figure>
+          <div class="flex flex-col">
+            <h3 class="font-semibold">{w.employer}</h3>
+            <p>{w.position}</p>
+            <p class="mt-1 text-sm text-gray-400">
+              {w.startMonthYear} - {w.endMonthYear}
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .sketched {
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius: 15px 255px;
+  }
+</style>
