@@ -23,13 +23,13 @@ const { workplaces } = Astro.props;
   >
     {
       workplaces.map((w) => (
-        <li class="flex gap-7 lg:gap-4">
-          <figure class="sketched grid h-20 w-20 place-items-center rounded-2xl border-2 border-gray-500">
+        <li class="flex gap-6 sm:gap-7 lg:gap-4">
+          <figure class="sketched grid h-12 w-12 place-items-center rounded-2xl border-2 border-gray-500 sm:h-20 sm:w-20">
             <Image
               src={w.img}
               alt={w.employer}
               loading="lazy"
-              class="h-14 w-14"
+              class="h-10 w-10 sm:h-14 sm:w-14"
             />
           </figure>
           <div class="flex flex-col">
