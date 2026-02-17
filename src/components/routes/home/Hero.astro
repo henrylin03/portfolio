@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import keyboardImg from "@/assets/images/keyboard.png";
-import type { SocialMediaLink } from "@/data/socials";
+import type { SocialMediaLink } from "@/data/contactDetails";
 
 interface Props {
-  socialsLinks: SocialMediaLink[];
+  socialMediaLinks: SocialMediaLink[];
 }
 
-const { socialsLinks } = Astro.props;
+const { socialMediaLinks }: Props = Astro.props;
 ---
 
 <section
@@ -39,7 +39,7 @@ const { socialsLinks } = Astro.props;
     >
     <ul class="flex items-center gap-4">
       {
-        socialsLinks.map((link) => (
+        socialMediaLinks.map((link) => (
           <li>
             <a
               href={link.href}

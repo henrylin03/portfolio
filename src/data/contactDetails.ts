@@ -22,3 +22,5 @@ export const SOCIALS: SocialMediaLink[] = [
     classes: "opacity-80",
   },
 ];
+
+export const EMAIL = "hello@henrylin.io";

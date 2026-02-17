@@ -2,14 +2,16 @@
 import ExperienceSection from "@/components/routes/home/ExperienceSection.astro";
 import Hero from "@/components/routes/home/Hero.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { SOCIALS } from "@/data/socials";
+import { SOCIALS, EMAIL } from "@/data/contactDetails";
 import { WORKPLACES } from "@/data/workplaces";
 import { PROJECTS } from "@/data/projects";
 import ProjectsSection from "@/components/routes/home/ProjectsSection.astro";
+import ContactSection from "@/components/routes/home/ContactSection.astro";
 ---
 
 <BaseLayout title="Henry's Portfolio">
-  <Hero socialsLinks={SOCIALS} />
+  <Hero socialMediaLinks={SOCIALS} />
   <ExperienceSection workplaces={WORKPLACES} />
   <ProjectsSection projects={PROJECTS} />
+  <ContactSection socialMediaLinks={SOCIALS} contactEmail={EMAIL} />
 </BaseLayout>
