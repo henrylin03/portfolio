@@ -32,8 +32,8 @@ const { projects }: Props = Astro.props;
               <div class="input">{p.buttonForLiveSite.href}</div>
             </div>
             <div class="preview-container grid cursor-pointer place-content-center border-t border-base-300">
-              <Image src={p.preview.img} alt="Preview" />
-              <video autoplay muted loop playsinline class="hidden">
+              <Image src={p.preview.img} alt="Preview" loading="lazy" />
+              <video muted loop playsinline class="hidden">
                 <source src={p.preview.video} type="video/mp4" />
               </video>
             </div>
@@ -74,7 +74,7 @@ const { projects }: Props = Astro.props;
     const previewImg = container.querySelector("img");
     const video = container.querySelector("video");
 
-    container.addEventListener("mouseover", () => {
+    container.addEventListener("mouseenter", () => {
       previewImg?.classList.add("hidden");
       if (!video) return;
       video.classList.remove("hidden");
