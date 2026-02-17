@@ -4,9 +4,12 @@ import Hero from "@/components/routes/home/Hero.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { SOCIALS } from "@/data/socials";
 import { WORKPLACES } from "@/data/workplaces";
+import { PROJECTS } from "@/data/projects";
+import ProjectsSection from "@/components/routes/home/ProjectsSection.astro";
 ---
 
 <BaseLayout title="Henry's Portfolio">
   <Hero socialsLinks={SOCIALS} />
   <ExperienceSection workplaces={WORKPLACES} />
+  <ProjectsSection projects={PROJECTS} />
 </BaseLayout>
