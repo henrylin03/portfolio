@@ -14,25 +14,27 @@ const { workplaces }: Props = Astro.props;
   id="experience"
 >
   <h2
-    class="mb-8 text-4xl sm:mb-12 sm:text-5xl sm:font-light md:text-8xl lg:my-12"
+    class="decorative-font mb-8 text-4xl font-light sm:mb-12 sm:text-5xl md:text-8xl lg:my-12"
   >
     Experience
   </h2>
-  <ul class="grid grid-rows-3 gap-8 pl-3 sm:pl-0 md:gap-16 lg:grid-cols-3">
+  <ul
+    class="flex flex-wrap gap-x-16 gap-y-8 max-[698px]:flex-col min-[698px]:items-center lg:w-6xl lg:max-w-full lg:justify-between"
+  >
     {
       workplaces.map((w) => (
-        <li class="flex gap-7 lg:gap-4">
-          <figure class="sketched grid h-20 w-20 place-items-center rounded-2xl border-2 border-gray-500">
+        <li class="flex gap-6 sm:gap-7 lg:gap-4">
+          <figure class="sketched grid h-12 w-12 place-items-center rounded-2xl border-2 border-gray-500 sm:h-20 sm:w-20">
             <Image
               src={w.img}
               alt={w.employer}
               loading="lazy"
-              class="h-14 w-14"
+              class="h-10 w-10 sm:h-14 sm:w-14"
             />
           </figure>
           <div class="flex flex-col">
             <h3 class="font-semibold">{w.employer}</h3>
-            <p>{w.position}</p>
+            <p class="font-light">{w.position}</p>
             <p class="mt-1 text-sm text-gray-400">
               {w.startMonthYear} - {w.endMonthYear}
             </p>
