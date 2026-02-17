@@ -1,0 +1,36 @@
+---
+import type { SocialMediaLink } from "@/data/contactDetails";
+import { Image } from "astro:assets";
+
+interface Props {
+  socialMediaLinks: SocialMediaLink[];
+  iconsLoading?: "eager" | "lazy";
+}
+
+const { socialMediaLinks, iconsLoading = "lazy" } = Astro.props;
+---
+
+<ul class="flex items-center gap-4">
+  {
+    socialMediaLinks.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Let's connect on ${link.label}`}
+        >
+          <Image
+            src={link.icon}
+            alt={link.label}
+            loading={iconsLoading}
+            class:list={[
+              "h-6 w-6 rounded-4xl transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none",
+              link.classes,
+            ]}
+          />
+        </a>
+      </li>
+    ))
+  }
+</ul>
