@@ -1,4 +1,5 @@
 ---
+import SocialsIconButtons from "@/components/global/SocialsIconButtons.astro";
 import type { SocialMediaLink } from "@/data/contactDetails";
 
 interface Props {
@@ -11,12 +12,16 @@ const { socialMediaLinks, contactEmail }: Props = Astro.props;
 
 <section id="contact" class="my-48">
   <h2 class="decorative-font text-8xl font-light">Get in contact.</h2>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center gap-8">
     <a
       role="button"
       class="btn rounded-4xl px-24 py-12 text-6xl font-light btn-xl"
       href={`mailto: ${contactEmail}`}>{contactEmail}</a
     >
-    {socialMediaLinks.map((link) => <p>{link.label}</p>)}
+    <SocialsIconButtons
+      socialMediaLinks={socialMediaLinks}
+      size="lg"
+      iconsLoading="lazy"
+    />
   </div>
 </section>
