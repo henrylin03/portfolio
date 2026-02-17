@@ -9,13 +9,13 @@ interface Props {
 const { workplaces } = Astro.props;
 ---
 
-<section class="mx-auto max-w-500 px-20 py-50">
+<section class="max-w-6xl px-20 py-50">
   <h2 class="my-12 text-8xl font-light">Experience</h2>
-  <ul class="flex items-center gap-20">
+  <ul class="grid grid-cols-3 gap-10 divide-x-2 divide-gray-200">
     {
       workplaces.map((w) => (
         <li class="flex gap-4">
-          <figure class="sketched grid h-20 w-20 place-items-center rounded-2xl border-2 border-gray-600">
+          <figure class="sketched grid h-20 w-20 place-items-center rounded-2xl border-2 border-gray-500">
             <Image
               src={w.img}
               alt={w.employer}
