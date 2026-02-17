@@ -1,11 +1,10 @@
 import githubIcon from "@/assets/icons/github.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
-import type { SvgComponent } from "astro/types";
 
 export type SocialMediaLink = {
   label: string;
   href: string;
-  icon: SvgComponent;
+  icon: ImageMetadata;
   classes: string;
 };
 
