@@ -9,18 +9,18 @@ interface Props {
 const { projects }: Props = Astro.props;
 ---
 
-<section class="max-w-600 px-48" id="projects">
-  <h2 class="mb-8 text-right text-8xl font-light">Projects</h2>
-  <ul class="grid grid-cols-2 gap-8">
+<section class="px-10 pb-24 lg:pb-100 xl:px-20 2xl:px-48" id="projects">
+  <h2 class="mr-24 mb-8 text-right text-8xl font-light 2xl:mb-0">Projects</h2>
+  <ul class="flex flex-col gap-24 lg:grid lg:grid-cols-2 lg:gap-6 xl:gap-8">
     {
       projects.map((p, idx: number) => (
         <li
           class:list={[
             "flex flex-col items-start gap-4",
-            idx % 2 && "lg:translate-y-88",
+            idx % 2 && "lg:translate-y-48 2xl:translate-y-88",
           ]}
         >
-          <div class="mockup-browser w-full border border-base-300">
+          <div class="mockup-browser w-full border border-gray-400">
             <div class="mockup-browser-toolbar">
               <div class="input">{p.buttonForLiveSite.href}</div>
             </div>
