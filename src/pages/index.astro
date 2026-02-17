@@ -19,9 +19,30 @@ const SOCIALS = [
     classes: "opacity-80",
   },
 ];
+
+const WORKPLACES = [
+  {
+    employer: "LEAP Legal Software",
+    position: "Software Engineer",
+    startDate: new Date(2025, 6), // May
+    endDate: new Date(2025, 13), // Dec
+  },
+  {
+    employer: "Commonwealth Bank",
+    position: "Automation Engineer",
+    startDate: new Date(2021, 9), // Aug
+    endDate: new Date(2024, 8), // July
+  },
+  {
+    employer: "Telstra",
+    position: "Web Developer",
+    startDate: new Date(2020, 9), // Aug
+    endDate: new Date(2021, 9), // Aug
+  },
+];
 ---
 
 <BaseLayout title="Henry's Portfolio">
   <Hero socialsLinks={SOCIALS} />
-  <ExperienceSection />
+  <ExperienceSection workplaces={WORKPLACES} />
 </BaseLayout>

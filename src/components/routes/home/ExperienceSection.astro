@@ -1,7 +1,19 @@
 ---
+type Workplace = {
+  employer: string;
+  position: string;
+  startDate: Date;
+  endDate: Date;
+};
 
+interface Props {
+  workplaces: Workplace[];
+}
+
+const { workplaces } = Astro.props;
 ---
 
 <section class="mx-auto prose max-w-500 px-20 py-50">
   <h2 class="text-8xl font-light">Experience</h2>
+  {workplaces}
 </section>
