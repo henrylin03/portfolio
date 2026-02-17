@@ -15,18 +15,18 @@ const { workplaces } = Astro.props;
     {
       workplaces.map((w) => (
         <li class="flex gap-4">
-          <figure class="sketched grid h-25 w-25 place-items-center rounded-2xl border-2">
+          <figure class="sketched grid h-20 w-20 place-items-center rounded-2xl border-2 border-gray-600">
             <Image
               src={w.img}
               alt={w.employer}
               loading="lazy"
-              class="h-16 w-16"
+              class="h-14 w-14"
             />
           </figure>
-          <div class="flex flex-col gap-2">
-            <h3>{w.employer}</h3>
+          <div class="flex flex-col">
+            <h3 class="font-semibold">{w.employer}</h3>
             <p>{w.position}</p>
-            <p>
+            <p class="mt-1 text-sm text-gray-400">
               {w.startMonthYear} - {w.endMonthYear}
             </p>
           </div>
