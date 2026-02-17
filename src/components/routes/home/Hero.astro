@@ -1,23 +1,20 @@
 ---
 import { Image } from "astro:assets";
 import keyboardImg from "@/assets/images/keyboard.png";
-import githubIcon from "@/assets/icons/github.svg";
-import linkedinIcon from "@/assets/icons/linkedin.svg";
+import type { SvgComponent } from "astro/types";
 
-const SOCIALS = [
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/henrylin03",
-    icon: linkedinIcon,
-    classes: "opacity-70",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/henrylin03/",
-    icon: githubIcon,
-    classes: "opacity-80",
-  },
-];
+type SocialMediaLink = {
+  label: string;
+  href: string;
+  icon: SvgComponent;
+  classes: string;
+};
+
+interface Props {
+  socialsLinks: SocialMediaLink[];
+}
+
+const { socialsLinks } = Astro.props;
 ---
 
 <section
@@ -49,7 +46,7 @@ const SOCIALS = [
     >
     <ul class="flex items-center gap-4">
       {
-        SOCIALS.map((link) => (
+        socialsLinks.map((link) => (
           <li>
             <a
               href={link.href}
