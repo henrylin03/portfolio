@@ -18,7 +18,9 @@ const { workplaces } = Astro.props;
   >
     Experience
   </h2>
-  <ul class="grid grid-rows-3 gap-8 pl-3 sm:pl-0 md:gap-16 lg:grid-cols-3">
+  <ul
+    class="flex flex-wrap gap-x-16 gap-y-8 max-[698px]:flex-col min-[698px]:items-center lg:w-6xl lg:max-w-full lg:justify-between"
+  >
     {
       workplaces.map((w) => (
         <li class="flex gap-7 lg:gap-4">
