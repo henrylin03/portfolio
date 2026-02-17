@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import keyboardImg from "@/assets/images/keyboard.png";
 import type { SocialMediaLink } from "@/data/socials";
+import SocialsIconButtons from "@/components/global/SocialsIconButtons.astro";
 
 interface Props {
   socialsLinks: SocialMediaLink[];
@@ -37,29 +38,6 @@ const { socialsLinks } = Astro.props;
       class="btn rounded-4xl transition-transform btn-lg btn-primary hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none md:btn-xl"
       >Let's connect</a
     >
-    <ul class="flex items-center gap-4">
-      {
-        socialsLinks.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Let's connect on ${link.label}`}
-            >
-              <Image
-                src={link.icon}
-                alt={link.label}
-                loading="eager"
-                class:list={[
-                  "h-6 w-6 rounded-4xl transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none",
-                  link.classes,
-                ]}
-              />
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <SocialsIconButtons socialMediaLinks={socialsLinks} iconsLoading="eager" />
   </div>
 </section>
