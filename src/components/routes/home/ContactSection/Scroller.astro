@@ -8,7 +8,9 @@ const { text } = Astro.props;
 
 <div class="scroller">
   <div class="scroller__inner">
-    <p class="decorative-font">{text}</p>
+    <p class="decorative-font text-5xl font-light sm:text-5xl md:text-8xl">
+      {text}
+    </p>
   </div>
 </div>
 
@@ -24,19 +26,16 @@ const { text } = Astro.props;
     );
   }
 
-  .scroller[data-animated="true"] .scroller__inner {
+  .scroller[data-animated="true"] > .scroller__inner {
     width: max-content;
     display: flex;
     gap: 1rem;
-    flex-wrap: nowrap;
 
     animation: scroll 60s forwards linear infinite;
   }
 
   .scroller p {
     text-align: center;
-    font-size: var(--text-8xl);
-    font-weight: var(--font-weight-light);
     text-wrap: nowrap;
     margin-bottom: 2rem;
   }
