@@ -4,16 +4,14 @@ import { Image } from "astro:assets";
 
 interface Props {
   socialMediaLinks: SocialMediaLink[];
-  size?: "sm" | "lg";
+  classes?: string;
   iconsLoading?: "eager" | "lazy";
 }
 
-const { socialMediaLinks, size = "sm", iconsLoading = "lazy" } = Astro.props;
-
-const sizeClasses = size === "sm" ? "h-6 w-6" : "h-8 w-8";
+const { socialMediaLinks, classes, iconsLoading = "lazy" } = Astro.props;
 ---
 
-<ul class="flex items-center gap-4">
+<ul class="flex items-center gap-2 lg:gap-4">
   {
     socialMediaLinks.map((link) => (
       <li>
@@ -29,7 +27,7 @@ const sizeClasses = size === "sm" ? "h-6 w-6" : "h-8 w-8";
             loading={iconsLoading}
             class:list={[
               "rounded-4xl transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none",
-              sizeClasses,
+              classes,
               link.classes,
             ]}
           />
