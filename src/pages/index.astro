@@ -7,9 +7,46 @@ import { WORKPLACES } from "@/data/workplaces";
 import { PROJECTS } from "@/data/projects";
 import ProjectsSection from "@/components/routes/home/ProjectsSection.astro";
 import ContactSection from "@/components/routes/home/ContactSection/index.astro";
+import type { SeoMetadata } from "@/data/seoMetadata";
+import ogImg from "@/assets/images/hero-screenshot.png";
+
+const seoMetadata: SeoMetadata = {
+  title: "Henry Lin | Web engineer building memorable experiences on the web",
+  description:
+    "Henry is a web engineer who builds responsive web apps and websites. Using a tech stack of JavaScript, TypeScript, React, CSS, Node.js and more, let's chat about how I can help you build something amazing on the web!",
+  keywords: [
+    "web developer",
+    "web designer",
+    "website",
+    "build website",
+    "build web app",
+    "web developer australia",
+    "website builder australia",
+    "web builder",
+    "software engineer web",
+    "frontend web developer",
+    "react developer",
+    "typescript developer",
+    "html developer",
+    "css developer",
+    "javascript developer",
+    "build website cheap",
+    "freelance developer",
+    "design and build website",
+    "web app",
+    "freelance web developer",
+    "full stack developer",
+    "startup engineer",
+    "web products",
+    "ui/ux designer web",
+    "ui/ux designer australia",
+  ],
+  canonicalUrl: "https://henrylin.io",
+  ogImagePath: String(ogImg),
+};
 ---
 
-<BaseLayout title="Henry's Portfolio">
+<BaseLayout seoMetadata={seoMetadata}>
   <Hero socialMediaLinks={SOCIALS} />
   <ExperienceSection workplaces={WORKPLACES} />
   <ProjectsSection projects={PROJECTS} />
