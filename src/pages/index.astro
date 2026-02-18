@@ -8,11 +8,12 @@ import { PROJECTS } from "@/data/projects";
 import ProjectsSection from "@/components/routes/home/ProjectsSection.astro";
 import ContactSection from "@/components/routes/home/ContactSection/index.astro";
 import type { SeoMetadata } from "@/data/seoMetadata";
+import ogImg from "@/assets/images/hero-screenshot.png";
 
 const seoMetadata: SeoMetadata = {
   title: "Henry Lin | Web engineer building memorable experiences on the web",
   description:
-    "Henry is a software engineer who specialises in building responsive web apps and websites. Using a tech stack of JavaScript, TypeScript, React, CSS, Node.js and more, let's chat about how I can help you building something amazing on the web!",
+    "Henry is a web engineer who builds responsive web apps and websites. Using a tech stack of JavaScript, TypeScript, React, CSS, Node.js and more, let's chat about how I can help you build something amazing on the web!",
   keywords: [
     "web developer",
     "web designer",
@@ -41,6 +42,7 @@ const seoMetadata: SeoMetadata = {
     "ui/ux designer australia",
   ],
   canonicalUrl: "https://henrylin.io",
+  ogImagePath: String(ogImg),
 };
 ---
 

@@ -3,4 +3,5 @@ export type SeoMetadata = {
   description: string;
   keywords: string[];
   canonicalUrl: string;
+  ogImagePath: string;
 };

@@ -7,7 +7,7 @@ interface Props {
 
 const { seoMetadata } = Astro.props;
 
-const { title, description, keywords, canonicalUrl } = seoMetadata;
+const { title, description, keywords, canonicalUrl, ogImagePath } = seoMetadata;
 
 const keywordsString = keywords.join(",");
 ---
@@ -16,3 +16,9 @@ const keywordsString = keywords.join(",");
 <meta name="description" content={description} />
 <meta name="keywords" content={keywordsString} />
 <link rel="canonical" href={canonicalUrl} />
+
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={ogImagePath} />
+<meta property="og:description" content={description} />
