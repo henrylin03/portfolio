@@ -1,0 +1,32 @@
+---
+import type { NavLink } from "./index.astro";
+
+interface Props {
+  navLinks: NavLink[];
+  class?: string;
+}
+
+const { navLinks, class: className } = Astro.props;
+---
+
+<nav
+  class:list={[
+    "dropdown-content menu z-1 mt-1 w-40 rounded-box bg-base-100 p-2 shadow-md",
+    className,
+  ]}
+>
+  <ul>
+    {
+      navLinks.map((link) => (
+        <li class="prose grid justify-items-end">
+          <a
+            href={link.href}
+            class="bg-transparent font-light no-underline underline-offset-4 hover:underline"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

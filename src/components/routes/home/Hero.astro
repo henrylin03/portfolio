@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import keyboardImg from "@/assets/images/keyboard.png";
+import type { SocialMediaLink } from "@/data/contactDetails";
+import SocialsIconButtons from "@/components/global/SocialsIconButtons.astro";
+
+interface Props {
+  socialMediaLinks: SocialMediaLink[];
+}
+
+const { socialMediaLinks }: Props = Astro.props;
+---
+
+<section
+  class="mx-auto max-w-500 grid-cols-2 items-end px-6 py-6 min-[1022px]:px-10 md:grid xl:px-20"
+>
+  <Image
+    src={keyboardImg}
+    alt="Computer keyboard"
+    class="hidden max-w-full scale-x-[-1] md:block"
+    loading="eager"
+  />
+  <div class="flex flex-1 flex-col items-end gap-8">
+    <h2
+      class="decorative-font text-right text-7xl leading-[0.85] font-extralight opacity-90 min-[747px]:mb-8 min-[747px]:text-[10rem] min-[1211px]:text-[17rem] lg:translate-x-5"
+    >
+      Web<br />Engineer
+    </h2>
+    <div
+      class="flex flex-col gap-4 text-right font-light opacity-80 sm:text-xl lg:text-[1.5rem]"
+    >
+      <p>Hi, I'm Henry.</p>
+      <p>I help companies build memorable experiences on the web.</p>
+    </div>
+    <a
+      role="button"
+      href="#contact"
+      class="btn rounded-4xl transition-transform btn-lg btn-primary hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none md:btn-xl"
+      >Let's connect</a
+    >
+    <SocialsIconButtons
+      socialMediaLinks={socialMediaLinks}
+      classes="h-6 w-6"
+      iconsLoading="eager"
+    />
+  </div>
+</section>

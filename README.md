@@ -1,3 +1,3 @@
 # Portfolio
 
-This repository houses my portfolio site.
+This repository houses my portfolio, written in Astro
