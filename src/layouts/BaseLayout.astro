@@ -20,7 +20,9 @@ const { seoMetadata } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <footer class="footer bg-base-100 p-4 text-base-content opacity-80 lg:px-8">
       <aside>
         <p>© {new Date().getFullYear()} Henry Lin. All rights reserved.</p>
