@@ -60,8 +60,8 @@ const { text } = Astro.props;
     const scrollerInnerElement = document.querySelector(".scroller__inner");
     const textElement = scrollerInnerElement?.querySelector("p");
 
-    let count = 0;
-    while (count <= numberOfElements) {
+    let count = 1;
+    while (count < numberOfElements) {
       const duplicatedTextElement = textElement?.cloneNode(true);
       if (duplicatedTextElement)
         scrollerInnerElement?.appendChild(duplicatedTextElement);
