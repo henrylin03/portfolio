@@ -8,7 +8,9 @@ const { text } = Astro.props;
 
 <div class="scroller">
   <div class="scroller__inner">
-    <p class="decorative-font text-5xl font-light sm:text-5xl md:text-8xl">
+    <p
+      class="decorative-font mb-8 text-5xl font-light sm:text-5xl md:text-8xl lg:mb-12"
+    >
       {text}
     </p>
   </div>
@@ -37,7 +39,6 @@ const { text } = Astro.props;
   .scroller p {
     text-align: center;
     text-wrap: nowrap;
-    margin-bottom: 2rem;
   }
 
   @keyframes scroll {
