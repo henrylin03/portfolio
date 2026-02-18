@@ -1,0 +1,75 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="scroller">
+  <div class="scroller__inner">
+    <p class="decorative-font text-5xl font-light sm:text-5xl md:text-8xl">
+      {text}
+    </p>
+  </div>
+</div>
+
+<style>
+  .scroller[data-animated="true"] {
+    overflow: hidden;
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      white 20%,
+      white 80%,
+      transparent
+    );
+  }
+
+  .scroller[data-animated="true"] > .scroller__inner {
+    width: max-content;
+    display: flex;
+    gap: 1rem;
+
+    animation: scroll 60s forwards linear infinite;
+  }
+
+  .scroller p {
+    text-align: center;
+    text-wrap: nowrap;
+    margin-bottom: 2rem;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+</style>
+
+<script>
+  const scrollerElement = document.querySelector(".scroller");
+
+  const userPrefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (!userPrefersReducedMotion) addScrollingAnimation();
+
+  function duplicateChildren(numberOfElements: number) {
+    const scrollerInnerElement = document.querySelector(".scroller__inner");
+    const textElement = scrollerInnerElement?.querySelector("p");
+
+    let count = 0;
+    while (count <= numberOfElements) {
+      const duplicatedTextElement = textElement?.cloneNode(true);
+      if (duplicatedTextElement)
+        scrollerInnerElement?.appendChild(duplicatedTextElement);
+      count++;
+    }
+  }
+
+  function addScrollingAnimation() {
+    scrollerElement?.setAttribute("data-animated", "true");
+    duplicateChildren(5);
+  }
+</script>

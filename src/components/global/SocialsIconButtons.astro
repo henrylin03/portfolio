@@ -1,13 +1,14 @@
 ---
-import type { SocialMediaLink } from "@/data/socials";
+import type { SocialMediaLink } from "@/data/contactDetails";
 import { Image } from "astro:assets";
 
 interface Props {
   socialMediaLinks: SocialMediaLink[];
   iconsLoading?: "eager" | "lazy";
+  classes?: string;
 }
 
-const { socialMediaLinks, iconsLoading = "lazy" } = Astro.props;
+const { socialMediaLinks, classes, iconsLoading = "lazy" } = Astro.props;
 ---
 
 <ul class="flex items-center gap-4">
@@ -25,7 +26,8 @@ const { socialMediaLinks, iconsLoading = "lazy" } = Astro.props;
             alt={link.label}
             loading={iconsLoading}
             class:list={[
-              "h-6 w-6 rounded-4xl transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none",
+              "rounded-4xl transition-transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none",
+              classes,
               link.classes,
             ]}
           />
