@@ -11,7 +11,11 @@ interface Props {
 const { socialMediaLinks, contactEmail }: Props = Astro.props;
 ---
 
-<section id="contact" class="my-24 lg:my-48" aria-labelledby="contact-heading">
+<section
+  id="contact"
+  class="mt-36 mb-12 md:my-36 2xl:mt-48"
+  aria-labelledby="contact-heading"
+>
   <h2 class="hidden" id="contact-heading">Get in contact</h2>
   <Scroller text="Get in contact." />
   <div class="flex flex-col items-center gap-4 lg:gap-8">
