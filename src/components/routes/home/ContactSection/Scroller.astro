@@ -6,7 +6,7 @@ interface Props {
 const { text } = Astro.props;
 ---
 
-<div class="scroller" data-animated="true">
+<div class="scroller">
   <div class="scroller__inner">
     <p class="decorative-font">{text}</p>
   </div>
@@ -24,8 +24,7 @@ const { text } = Astro.props;
     );
   }
 
-  .scroller__inner {
-    padding-bottom: 4rem;
+  .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
     display: flex;
     gap: 1rem;
@@ -35,9 +34,11 @@ const { text } = Astro.props;
   }
 
   .scroller p {
+    text-align: center;
     font-size: var(--text-8xl);
     font-weight: var(--font-weight-light);
     text-wrap: nowrap;
+    margin-bottom: 2rem;
   }
 
   @keyframes scroll {
@@ -48,15 +49,28 @@ const { text } = Astro.props;
 </style>
 
 <script>
-  const scrollerInnerElement = document.querySelector(".scroller__inner");
-  const textElement = scrollerInnerElement?.querySelector("p");
+  const scrollerElement = document.querySelector(".scroller");
 
-  const TOTAL_COUNT_OF_TEXT = 5;
-  let count = 0;
-  while (count <= TOTAL_COUNT_OF_TEXT) {
-    const duplicatedTextElement = textElement?.cloneNode(true);
-    if (duplicatedTextElement)
-      scrollerInnerElement?.appendChild(duplicatedTextElement);
-    count++;
+  const userPrefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (!userPrefersReducedMotion) addScrollingAnimation();
+
+  function duplicateChildren(numberOfElements: number) {
+    const scrollerInnerElement = document.querySelector(".scroller__inner");
+    const textElement = scrollerInnerElement?.querySelector("p");
+
+    let count = 0;
+    while (count <= numberOfElements) {
+      const duplicatedTextElement = textElement?.cloneNode(true);
+      if (duplicatedTextElement)
+        scrollerInnerElement?.appendChild(duplicatedTextElement);
+      count++;
+    }
+  }
+
+  function addScrollingAnimation() {
+    scrollerElement?.setAttribute("data-animated", "true");
+    duplicateChildren(5);
   }
 </script>
