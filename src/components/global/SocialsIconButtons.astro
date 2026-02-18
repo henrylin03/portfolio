@@ -4,14 +4,14 @@ import { Image } from "astro:assets";
 
 interface Props {
   socialMediaLinks: SocialMediaLink[];
-  classes?: string;
   iconsLoading?: "eager" | "lazy";
+  classes?: string;
 }
 
 const { socialMediaLinks, classes, iconsLoading = "lazy" } = Astro.props;
 ---
 
-<ul class="flex items-center gap-2 lg:gap-4">
+<ul class="flex items-center gap-4">
   {
     socialMediaLinks.map((link) => (
       <li>
