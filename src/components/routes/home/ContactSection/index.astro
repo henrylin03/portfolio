@@ -1,6 +1,7 @@
 ---
 import SocialsIconButtons from "@/components/global/SocialsIconButtons.astro";
 import type { SocialMediaLink } from "@/data/contactDetails";
+import Scroller from "./Scroller.astro";
 
 interface Props {
   socialMediaLinks: SocialMediaLink[];
@@ -10,8 +11,9 @@ interface Props {
 const { socialMediaLinks, contactEmail }: Props = Astro.props;
 ---
 
-<section id="contact" class="my-48">
-  <h2 class="decorative-font mb-8 text-8xl font-light">Get in contact.</h2>
+<section id="contact" class="my-48" aria-labelledby="contact-heading">
+  <h2 class="hidden" id="contact-heading">Get in contact</h2>
+  <Scroller text="Get in contact." />
   <div class="flex flex-col items-center gap-8">
     <a
       role="button"
