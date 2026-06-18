@@ -20,7 +20,7 @@ export const WORKPLACES: Workplace[] = [
   },
   {
     employer: "Commonwealth Bank",
-    position: "Automation Engineer",
+    position: "Senior Business Analyst",
     startMonthYear: "Aug 2021",
     endMonthYear: "Jul 2024",
     img: cbaImg,
